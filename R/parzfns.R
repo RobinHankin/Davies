@@ -285,7 +285,7 @@ function (x, params)
         } else if (x <= 0) {
             return(0)
         } else {
-            return(uniroot(f,c(0,1), tol = 1e-06, a=c(params,x))$root)
+            return(max(uniroot(f,c(0,1), a=c(params,x))$root,0))
         }
     } else { # length(x) > 1
         val <- sapply(x, pdavies, params)
