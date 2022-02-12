@@ -280,17 +280,14 @@ function (x, params)
     if (length(x) <= 1) {
         if (length(x) == 0) {
             return(x)
-        }
-        if (is.na(x)) {
+        } else if (is.na(x)) {
             return(x)
-        }
-        if (x <= 0) {
+        } else if (x <= 0) {
             return(0)
+        } else {
+            return(uniroot(f,c(0,1), tol = 1e-06, a=c(params,x))$root)
         }
-        return(uniroot(f, c(0, 1), tol = 1e-06, a = c(params, 
-            x))$root)
-    }
-    else {
+    } else { # length(x) > 1
         val <- sapply(x, pdavies, params)
         attributes(val) <- attributes(x)
         return(val)
