@@ -324,11 +324,12 @@ function (y, q = 0.05)
 }
 
 "qdavies" <-
-function (p, params) 
+function (p, params, lower.tail=TRUE) 
 {
     C <- params[1]
     l1 <- params[2]
     l2 <- -params[3]
+    if(!lower.tail){p <- 1-p}
     ans <- C * p^l1 * (1 - p)^l2
     ans[p <= 0] <- 0
     ans[p >= 1] <- Inf

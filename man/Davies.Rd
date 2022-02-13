@@ -7,14 +7,14 @@
 \alias{rdavies}
 \alias{ddavies.p}
 \title{The Davies distribution}
-\description{
+\description{\loadmathjax
   Density, distribution function, quantile function and random
   generation for the Davies distribution
 }
 \usage{
  ddavies(x, params)
  pdavies(x, params)
- qdavies(p, params)
+ qdavies(p, params,lower.tail=TRUE)
  rdavies(n, params)
 ddavies.p(x,params)
 }
@@ -23,8 +23,10 @@ ddavies.p(x,params)
   \item{p}{vector of probabilities}
   \item{n}{number of observations.  If \code{length(n) > 1}, the length
     is taken to be the number required}
-  \item{params}{A three-member vector holding \eqn{C}{C} ,
-    \eqn{\lambda_1}{lambda1} and~\eqn{\lambda_2}{lambda2}}
+  \item{lower.tail}{logical; if \code{TRUE} (default), probabilities are
+    \mjeqn{P(X\leq x)}{P[X <= x]}, otherwise \mjeqn{P(X>x)}{P[X > x]}}
+  \item{params}{A three-member vector holding \mjeqn{C}{C},
+    \mjeqn{\lambda_1}{lambda1} and \mjeqn{\lambda_2}{lambda2}}
 }
 \details{
   The Davies distribution is defined in terms of its quantile function:
