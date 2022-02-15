@@ -1,0 +1,94 @@
+---
+title: "The Davies distribution"
+output:
+  github_document:
+    pandoc_args: --webtex
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# <img src="man/figures/Davies.png" width = "150" align="right" />
+
+<!-- badges: start -->
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/Davies)](https://cran.r-project.org/package=Davies)
+<!-- badges: end -->
+
+# Overview
+
+The Davies distribution is a flexible family of distributions for
+non-negative observations; it is particularly suitable for
+right-skewed data.  Hankin and Lee (2006) set out mathematical
+properties of the Davies distribution and the `Davies` package is
+showcased here.  It is defined in terms of its quantile function
+
+$Q(p;c,\lambda_1,\lambda_2) = \frac{Cp^{\lambda_1}}{(1-p)^{\lambda_2}}$
+
+```{r label=fig_one, echo = FALSE, dpi=300}
+library("Davies")
+plot(NA,xlim=c(0,4),ylim=c(0,2.6),xlab='x',ylab='density')
+legend("topright",expression(C==1,lambda[1]==0.1,lambda[2]==0.1-0.4))
+x <- seq(from=0,to=4,len=500)
+for(l2 in c(0.1, 0.2, 0.3, 0.4)){
+  points(x,ddavies(x,c(1,0.1,l2)),type="l",lwd=2)
+}
+text(1,2.60,"0.1")
+text(1,1.81,"0.2")
+text(1,1.41,"0.3")
+text(1,0.98,"0.4")
+```
+
+```{r label=fig_two, echo = FALSE, dpi=300}
+library("Davies")
+plot(NA,xlim=c(0,4),ylim=c(0,2.6),xlab='x',ylab='density')
+legend("topright",expression(C==1,lambda[1]==0.1,lambda[2]==0.1-0.4))
+x <- seq(from=0,to=4,len=500)
+for(l2 in c(0.1, 0.2, 0.3, 0.4)){
+  points(x,ddavies(x,c(1,0.4,l2)),type="l",lwd=2)
+}
+text(0.9,1.3,"0.1")
+text(0.8,1.1,"0.2")
+text(0.75,0.9,"0.3")
+text(0.7,0.6,"0.4")
+```
+
+We may sample from this distribution using `rdavies()`:
+
+```{r label=randomsample}
+params <- c(2,0.1,0.1)
+rdavies(10,params)
+```
+
+Moments are given by
+$E(X^k)=C^kB\left(1+k\lambda_1,1-k\lambda_2\right)$ where $B$ is the
+beta function.  In the package this is given by `M()`, which is a
+convenience wraper for `davies.moment()`.  Numerical verification for
+the second (non-central) moment:
+
+```{r label=comparemoments}
+c(mean(rdavies(1e6,params)^2),M(2,params))
+```
+
+
+## Estimation
+
+The least-squares technique described in Hankin and Lee 2006 is not
+implemented, but the package implements a maximum-likelihood estimate:
+
+
+```{r label=estimatetheparams}
+x <- rdavies(80,params)
+p_estimate <- maximum.likelihood(x)
+p_true <- params
+p_estimate
+(bias <- p_estimate - p_true)
+
+```
