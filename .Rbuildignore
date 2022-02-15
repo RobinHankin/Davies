@@ -1,0 +1,7 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^README\.Rmd
+inst/Davies_stickermaker.R$
+inst/jkwd_lowercase.svg$
+inst/jkwd.txt$
+
