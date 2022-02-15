@@ -29,8 +29,8 @@ We may sample from this distribution using `rdavies()`:
 ``` r
 params <- c(2,0.1,0.1)
 rdavies(10,params)
-#>  [1] 2.479476 2.007425 1.403187 1.948492 2.607155 1.759633 2.135626 2.370888
-#>  [9] 2.090710 1.711254
+#>  [1] 1.761097 2.008966 1.767981 2.020754 1.674392 2.003635 1.485477 1.980971
+#>  [9] 2.253223 2.567022
 ```
 
 Moments are given by
@@ -42,7 +42,7 @@ wraper for `davies.moment()`. Numerical verification for the second
 
 ``` r
 c(mean(rdavies(1e6,params)^2),M(2,params))
-#> [1] 4.275985 4.275837
+#> [1] 4.273915 4.275837
 ```
 
 ## Estimation
@@ -55,7 +55,12 @@ x <- rdavies(80,params)
 p_estimate <- maximum.likelihood(x)
 p_true <- params
 p_estimate
-#> [1] 2.04369738 0.12659572 0.06105991
+#> [1] 1.95306332 0.08418046 0.11483549
 (bias <- p_estimate - p_true)
-#> [1]  0.04369738  0.02659572 -0.03894009
+#> [1] -0.04693668 -0.01581954  0.01483549
 ```
+
+# Reference
+
+Robin K. S. Hankin and Alan Lee 2006. “A new family of non-negative
+distributions”. *Aust. N. Z. J. Stat*, 48(1):67-78

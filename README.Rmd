@@ -92,3 +92,7 @@ p_estimate
 (bias <- p_estimate - p_true)
 
 ```
+
+# Reference
+
+Robin K. S. Hankin and Alan Lee 2006.  "A new family of non-negative distributions".  _Aust. N. Z. J. Stat_, 48(1):67-78
