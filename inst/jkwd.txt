@@ -1,0 +1,56 @@
+Here I record some reminiscences of John Davies.  I will add things
+from time to time as they occur to me.
+
+I had the privilege of working with John Davies in the early 1990s
+while at the Health and Safety Executive.  John was a PSO, at the then
+Major Hazard Assessment Unit.  We worked on the same corridor and I
+would often talk with him.
+
+He would often sign himself as "jkwd", and I discovered that the "W"
+stood for "Welwyn", as in Welwyn Garden City.  Mike Brinn used to call
+him "welly davies".  I never found out what the "k" stood for.
+
+He had beautiful handwriting, almost copper plate.  One day he came
+into the common room and on the whiteboard wrote down a long equation
+giving central moments for some distribution he was interested in.
+While he wasn't looking, I erased a superscript "2" from the equation
+and pretended to be studying it intensely.  When he came back I said
+"John, shouldn't this be lambda _squared_?" and after a few minutes he
+replied "You are absolutely right.  It only goes to show".
+
+He had his own office and he kept it absolutely immaculate.  He had a
+beautiful leather-topped 4 foot by 8 foot wooden desk, which he kept
+clear apart from a desk lamp, a telephone, and notepad.  Everyone else
+on our corridor had a working environment cluttered with papers,
+dockets, scanners, printers, and other detritus of the 1990s
+environment.  One day his computer had problems and the IT support guy
+came in to help.  He could not believe how badly organized John's
+filesystem was, with many many files simply stored on the (windows)
+desktop.  He muttered that John "might have a tidy office but he has
+several terabytes of badly-organized files on his PC".
+
+One of our research projects was the study of accidental releases of
+liquified gases such as chlorine or LPG.  We were working with David
+Webber who was an expert in this area.  David put a lot of effort in
+to mentoring me during my PhD and I really appreciated it.  One day we
+had a statistical problem and asked John for help.  John's response
+was very helpful.  After he left, David said "you know, that guy knows
+an order of magnitude more statistics than anyone else I have ever
+met".  I remember thinking that this was high praise indeed.
+
+He was an enthusiastic exponent of APL and had a dedicated terminal in
+his office.  I remember it looked like a church organ pulpit; the
+keyboard included special APL symbols ("domino" and so on).  One day
+he showed me how to calculate the exponential function using maybe
+four symbols.
+
+One day I asked him about heavily right-skewed data; this would have
+been about 1991.  At the time we were interested in pollutants
+undergoing atmospheric dispersion from a point source.
+Concentration-time graphs are typically zero for much of the time,
+interspersed with short-lived but very high concentration spikes.  He
+said that the best way to deal with it was to use (what is now known
+as) the Davies quantile function, which he wrote on the whiteboard.
+This was before digital phones so I didn't get a photo of it.  Back
+then I didn't really know what quantile function was, and this forced
+me to do some investigating.
