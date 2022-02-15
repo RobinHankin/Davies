@@ -36,6 +36,9 @@ ddavies.p(x,params,log=FALSE)
 
   It does not have a closed-form  probability density function or
   cumulative density function, so numerical solution is used.
+
+  Function \code{ddavies.p()} returns the density of the Davies function
+  but as a function of the quantile.
 }
 \value{
   Function
