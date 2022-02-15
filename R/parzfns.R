@@ -58,19 +58,22 @@ function (x, threeps = c(0.1, 0.5, 0.9), small = 0.01)
 }
 
 "ddavies" <-
-function (x, params) 
+function (x, params, log=FALSE)  
 {
-    ddavies.p(pdavies(x, params), params)
+    ddavies.p(pdavies(x, params), params,log=log)
 }
 
 "ddavies.p" <-
-function (x, params) 
+function (x, params, log=FALSE) 
 {
     C <- params[1]
     l1 <- params[2]
     l2 <- -params[3]  #sign change
+    out <-
     1/(C * (l1 * x^(l1 - 1) * (1 - x)^l2 - l2 * x^l1 * (1 - x)^(l2 - 
         1)))
+    if(log){out <- log(out)}
+    return(out)
 }
 "dgld" <-
 function (x, params) 
@@ -268,7 +271,7 @@ function (params, dataset)
 }
 
 "pdavies" <-
-function (x, params) 
+function (x, params,log.p=FALSE,lower.tail=TRUE)
 {
     if (any(is.na(params))) {
         return(params[is.na(params)])
@@ -279,19 +282,21 @@ function (x, params)
     options(warn = -1)
     if (length(x) <= 1) {
         if (length(x) == 0) {
-            return(x)
+            out <- x
         } else if (is.na(x)) {
-            return(x)
+            out <- x
         } else if (x <= 0) {
-            return(0)
+            out <- x*0
         } else {
-            return(max(uniroot(f,c(0,1), a=c(params,x))$root,0))
+            out <- max(uniroot(f,c(0,1), a=c(params,x))$root,0)
         }
     } else { # length(x) > 1
-        val <- sapply(x, pdavies, params)
-        attributes(val) <- attributes(x)
-        return(val)
+        out <- sapply(x, pdavies, params)
+        attributes(out) <- attributes(x)
     }
+    if(lower.tail){out <- 1-out}
+    if(log.p){out <- log(out)}
+    return(out)
 }
 
 "pgld" <-

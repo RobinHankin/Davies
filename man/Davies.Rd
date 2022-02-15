@@ -12,11 +12,11 @@
   generation for the Davies distribution
 }
 \usage{
- ddavies(x, params)
- pdavies(x, params)
+ ddavies(x, params,log=FALSE)
+ pdavies(x, params,log.p=FALSE,lower.tail=TRUE)
  qdavies(p, params,lower.tail=TRUE)
  rdavies(n, params)
-ddavies.p(x,params)
+ddavies.p(x,params,log=FALSE)
 }
 \arguments{
   \item{x}{quantile}
@@ -25,6 +25,8 @@ ddavies.p(x,params)
     is taken to be the number required}
   \item{lower.tail}{logical; if \code{TRUE} (default), probabilities are
     \mjeqn{P(X\leq x)}{P[X <= x]}, otherwise \mjeqn{P(X>x)}{P[X > x]}}
+  \item{log,log.p}{logical; if \code{TRUE}, probabilities are given as
+    \mjseqn{log(p)}}
   \item{params}{A three-member vector holding \mjeqn{C}{C},
     \mjeqn{\lambda_1}{lambda1} and \mjeqn{\lambda_2}{lambda2}}
 }
