@@ -9,7 +9,7 @@
 \title{The Davies distribution}
 \description{\loadmathjax
   Density, distribution function, quantile function and random
-  generation for the Davies distribution
+  generation for the Davies distribution.
 }
 \usage{
  ddavies(x, params,log=FALSE)
@@ -26,7 +26,7 @@ ddavies.p(x,params,log=FALSE)
   \item{lower.tail}{logical; if \code{TRUE} (default), probabilities are
     \mjeqn{P(X\leq x)}{P[X <= x]}, otherwise \mjeqn{P(X>x)}{P[X > x]}}
   \item{log,log.p}{logical; if \code{TRUE}, probabilities are given as
-    \mjseqn{log(p)}}
+    \mjseqn{\log(p)}}
   \item{params}{A three-member vector holding \mjeqn{C}{C},
     \mjeqn{\lambda_1}{lambda1} and \mjeqn{\lambda_2}{lambda2}}
 }
