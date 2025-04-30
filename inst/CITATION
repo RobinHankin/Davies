@@ -5,7 +5,7 @@ citEntry(entry = "Article",
              paste("A new family of non-negative distributions")
 	     },
 	 author = c(person("Robin K.S. Hankin"),person("Alan Lee")),
-         email = "hankin.robin@gmail.com"),
+         email = "hankin.robin@gmail.com",
 	 journal = "Australia and New Zealand Journal of Statistics",
          year = "2006",
 	 volume = "48",
@@ -19,5 +19,3 @@ citEntry(entry = "Article",
 		   "48(1):67-78"
 		   )
          })
-
-
