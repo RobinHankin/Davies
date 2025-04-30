@@ -1,7 +1,6 @@
 Package: Davies
 Title: The Davies Quantile Function
-Version: 1.2-0
-Imports: mathjaxr
+Version: 1.2-1
 Authors@R: c(
     person(given=c("Robin", "K. S."), family="Hankin", role = c("aut","cre"), email="hankin.robin@gmail.com", comment = c(ORCID = "0000-0001-5982-0415")),
     person("Paul", "Egeler", email = "paulegeler@gmail.com", role = c("ctb"), comment = c(ORCID = "0000-0001-6948-9498"))
@@ -13,4 +12,3 @@ Repository: CRAN
 Date/Publication: 2016-05-26 09:21:09
 NeedsCompilation: no
 Packaged: 2016-05-25 22:24:39 UTC; rhankin
-RdMacros: mathjaxr
