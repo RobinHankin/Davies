@@ -1,10 +1,8 @@
 citHeader("To cite in publications use:")
 
-citEntry(entry = "Article",
-	 title = {
-             paste("A new family of non-negative distributions")
-	     },
-	 author = c(person("Robin K.S. Hankin"),person("Alan Lee")),
+bibentry(bibtype = "Article",
+	 title = "{A new family of non-negative distributions}",
+	 author = c(person("Robin K.S. Hankin"), person("Alan Lee")),
          email = "hankin.robin@gmail.com",
 	 journal = "Australia and New Zealand Journal of Statistics",
          year = "2006",
