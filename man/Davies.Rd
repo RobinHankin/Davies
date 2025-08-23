@@ -3,6 +3,7 @@
 \alias{davies}
 \alias{ddavies}
 \alias{pdavies}
+\alias{pdavies_single}
 \alias{qdavies}
 \alias{rdavies}
 \alias{ddavies.p}
@@ -14,6 +15,7 @@
 \usage{
  ddavies(x, params,log=FALSE)
  pdavies(x, params,log.p=FALSE,lower.tail=TRUE)
+ pdavies_single(x, params)
  qdavies(p, params,lower.tail=TRUE)
  rdavies(n, params)
 ddavies.p(x,params,log=FALSE)
@@ -36,6 +38,10 @@ ddavies.p(x,params,log=FALSE)
 
   It does not have a closed-form  probability density function or
   cumulative density function, so numerical solution is used.
+
+  Function \code{pdavies()} is vectorized in the first argument but not
+  the second; it calls helper function \code{pdavies_single()} that is
+  vectorized in neither.
 
   Function \code{ddavies.p()} returns the density of the Davies function
   but as a function of the quantile.

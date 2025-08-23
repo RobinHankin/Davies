@@ -270,31 +270,33 @@ function (params, dataset)
     sum((dataset - expected.value.approx(n, 1:n, params))^2)
 }
 
-"pdavies" <-
-function (x, params,log.p=FALSE,lower.tail=TRUE)
+"pdavies_single" <-
+function (x, params)
 {
     if (any(is.na(params))) {
-        return(params[is.na(params)])
+        return(params[is.na(params)][1])
     }
     f <- function(p, a) {
         qdavies(p = p, params = a[1:3]) - a[4]
     }
-    options(warn = -1)
-    if (length(x) <= 1) {
-        if (length(x) == 0) {
-            out <- x
-        } else if (is.na(x)) {
-            out <- x
-        } else if (x <= 0) {
-            out <- x*0
-        } else {
-            out <- max(uniroot(f,c(0,1), a=c(params,x))$root,0)
-        }
-    } else { # length(x) > 1
-        out <- sapply(x, pdavies, params)
-        attributes(out) <- attributes(x)
+    stopifnot(length(x) == 1)
+    if (is.na(x)) {
+        out <- x
+    } else if (x <= 0) {
+        out <- x*0
+    } else {
+        out <- max(uniroot(f, c(0,1), a=c(params,x))$root,0)
     }
-    if(lower.tail){out <- 1-out}
+    return(out)
+}
+
+"pdavies" <-
+function (x, params, log.p=FALSE, lower.tail=TRUE)
+{
+    stopifnot(length(params) == 3)
+    out <- sapply(x, pdavies_single, params)
+    attributes(out) <- attributes(x)
+    if(!lower.tail){out <- 1-out}
     if(log.p){out <- log(out)}
     return(out)
 }
