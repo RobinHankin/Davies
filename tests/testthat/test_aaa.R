@@ -1,5 +1,3 @@
-## Some tests of Alt()
-
 test_that("some tests of the Davies package", {
 
 
