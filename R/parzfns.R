@@ -1,3 +1,16 @@
+#' @importFrom stats runif
+#' @importFrom stats rbinom
+#' @importFrom stats optim
+#' @importFrom stats quantile
+#' @importFrom stats uniroot
+
+#' @importFrom graphics plot
+#' @importFrom graphics lines
+#' @importFrom graphics plot
+#' @importFrom graphics points
+#' @importFrom graphics segments
+
+#' @export
 "davies.moment" <-
 function (n = 1, i = 1, order = 1, params) 
 {
@@ -19,6 +32,7 @@ function (n = 1, i = 1, order = 1, params)
     }
 }
 
+#' @export
 "davies.start" <-
 function (x, threeps = c(0.1, 0.5, 0.9), small = 0.01) 
 {
@@ -57,12 +71,14 @@ function (x, threeps = c(0.1, 0.5, 0.9), small = 0.01)
     return(params[which.min(obj), ])
 }
 
+#' @export
 "ddavies" <-
 function (x, params, log=FALSE)  
 {
     ddavies.p(pdavies(x, params), params,log=log)
 }
 
+#' @export
 "ddavies.p" <-
 function (x, params, log=FALSE) 
 {
@@ -75,6 +91,8 @@ function (x, params, log=FALSE)
     if(log){out <- log(out)}
     return(out)
 }
+
+#' @export
 "dgld" <-
 function (x, params) 
 {
@@ -84,6 +102,8 @@ function (x, params)
     l4 <- params[4]
     dgld.p(pgld(x, params), params)
 }
+
+#' @export
 "dgld.p" <-
 function (x, params) 
 {
@@ -94,6 +114,7 @@ function (x, params)
     1/((l4 * (1 - x)^(l4 - 1) + l3 * x^(l3 - 1))/l2)
 }
 
+#' @export
 "expected.gld" <-
 function (n = 1, i = 1, params) 
 {
@@ -106,18 +127,21 @@ function (n = 1, i = 1, params)
         0, l4)))
 }
 
+#' @export
 "expected.gld.approx" <-
 function (n = 1, i = 1, params) 
 {
     qgld(i/(n + 1), params)
 }
 
+#' @export
 "expected.value" <-
 function (n, i, params) 
 {
     return(davies.moment(n = n, i = i, order = 1, params))
 }
 
+#' @export
 "expected.value.approx" <-
 function (n, i, params) 
 {
@@ -128,6 +152,7 @@ function (n, i, params)
     return(C * (p.i)^l1 * (1 - p.i)^l2)
 }
 
+#' @export
 "fit.davies.p" <-
 function (x, print.fit = FALSE, use.q = TRUE, params = NULL, 
     small = 1e-05, ...) 
@@ -157,6 +182,7 @@ function (x, print.fit = FALSE, use.q = TRUE, params = NULL,
     points(x, x * 0, pch = 3)
 }
 
+#' @export
 "fit.davies.q" <-
 function (x, print.fit = FALSE, use.q = TRUE, params = NULL, ...) 
 {
@@ -182,6 +208,7 @@ function (x, print.fit = FALSE, use.q = TRUE, params = NULL, ...)
     points(1:n, expected.value(n, 1:n, params), type = "l")
 }
 
+#' @export
 "kurtosis" <-
 function (params) 
 {
@@ -190,6 +217,7 @@ function (params)
     return(fourth.moment/variance(params)^2)
 }
 
+#' @export
 "least.squares" <-
 function (data, do.print = FALSE, start.v = NULL) 
 {
@@ -206,18 +234,21 @@ function (data, do.print = FALSE, start.v = NULL)
     }
 }
 
+#' @export
 "likelihood" <-
 function (params, data) 
 {
     prod(ddavies(data, params))
 }
 
+#' @export
 "M" <-
 function (order, params) 
 {
     davies.moment(n = 1, i = 1, order = order, params = params)
 }
 
+#' @export
 "maximum.likelihood" <-
 function (data, do.print = FALSE, start.v = NULL) 
 {
@@ -237,18 +268,21 @@ function (data, do.print = FALSE, start.v = NULL)
     }
 }
 
+#' @export
 "mu" <-
 function (params) 
 {
     M(1, params)
 }
 
+#' @export
 "neg.log.likelihood" <-
 function (params, data) 
 {
     -sum(log(ddavies(data, params)))
 }
 
+#' @export
 "objective" <-
 function (params, dataset) 
 {
@@ -262,6 +296,7 @@ function (params, dataset)
         penalty(-params[3]))
 }
 
+#' @export
 "objective.approx" <-
 function (params, dataset) 
 {
@@ -270,6 +305,7 @@ function (params, dataset)
     sum((dataset - expected.value.approx(n, 1:n, params))^2)
 }
 
+#' @export
 "pdavies_single" <-
 function (x, params)
 {
@@ -290,6 +326,7 @@ function (x, params)
     return(out)
 }
 
+#' @export
 "pdavies" <-
 function (x, params, log.p=FALSE, lower.tail=TRUE)
 {
@@ -301,6 +338,7 @@ function (x, params, log.p=FALSE, lower.tail=TRUE)
     return(out)
 }
 
+#' @export
 "pgld" <-
 function (q, params) 
 {
@@ -319,6 +357,7 @@ function (q, params)
     }
 }
 
+#' @export
 "plotcf" <-
 function (y, q = 0.05) 
 {
@@ -330,6 +369,7 @@ function (y, q = 0.05)
     lines(x[!is.lt], y[!is.lt])
 }
 
+#' @export
 "qdavies" <-
 function (p, params, lower.tail=TRUE) 
 {
@@ -343,6 +383,7 @@ function (p, params, lower.tail=TRUE)
     ans
 }
 
+#' @export
 "qgld" <-
 function (p, params) 
 {
@@ -358,12 +399,14 @@ function (p, params)
     l1 + (p^l3 - (1 - p)^l4)/l2
 }
 
+#' @export
 "rdavies" <-
 function (n = 1, params) 
 {
     qdavies(runif(n), params)
 }
 
+#' @export
 "rgld" <-
 function (n = 1, params) 
 {
@@ -374,6 +417,7 @@ function (n = 1, params)
     return(qgld(runif(n), params))
 }
 
+#' @export
 "rstupid" <-
 function (n, a = 1, b = 2, c = 3, d = 4) 
 {
@@ -384,6 +428,7 @@ function (n, a = 1, b = 2, c = 3, d = 4)
     return(jj * runif(n, a, b) + (1 - jj) * runif(n, c, d))
 }
 
+#' @export
 "skewness" <-
 function (params) 
 {
@@ -392,6 +437,7 @@ function (params)
     return(third.moment/(variance(params)^(3/2)))
 }
 
+#' @export
 "twolines.vert" <-
 function (p, y1, y2, ...) 
 {
@@ -403,6 +449,7 @@ function (p, y1, y2, ...)
     segments(p, y1, p, y2, ...)
 }
 
+#' @export
 "variance" <-
 function (params) 
 {
