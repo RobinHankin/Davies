@@ -4,4 +4,15 @@
 inst/Davies_stickermaker.R$
 inst/jkwd_lowercase.svg$
 inst/jkwd.txt$
-
+^.devcontainer$
+^codecov\.yml$
+^\.github$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^inst/arxiv
+^inst/sticker
+^.circleci/config.yml$
+^CODE_OF_CONDUCT.md$
+^CONTRIBUTING.md$
+^news.html$
