@@ -12,7 +12,7 @@
 
 }
 \usage{
-fit.davies.p(x , print.fit=FALSE, use.q=TRUE , params=NULL, small=1e-5 , ...)
+fit.davies.p(x , print.fit=FALSE, use.q=TRUE , params=NULL, small=1e-5, ...)
 fit.davies.q(x , print.fit=FALSE, use.q=TRUE , params=NULL, ...)
 }
 \arguments{
@@ -28,11 +28,11 @@ fit.davies.q(x , print.fit=FALSE, use.q=TRUE , params=NULL, ...)
 }
 \value{If \code{print.fit} is \code{TRUE}, return the optimal parameters}
 \author{Robin K. S. Hankin}
-\seealso{\code{\link{least.squares}} ,  \code{\link{maximum.likelihood}}
+\seealso{\code{\link{least.squares}},  \code{\link{maximum.likelihood}}
 }
 
 \examples{
-  fit.davies.q(rchisq(100,1))
+  fit.davies.q(rchisq(100, 1))
   fit.davies.p(exp(rnorm(100))) 
 
   data(x00m700p4)

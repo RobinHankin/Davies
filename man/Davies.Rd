@@ -13,18 +13,17 @@
   generation for the Davies distribution.
 }
 \usage{
- ddavies(x, params,log=FALSE)
- pdavies(x, params,log.p=FALSE,lower.tail=TRUE)
+ ddavies(x, params, log=FALSE)
+ pdavies(x, params, log.p=FALSE, lower.tail=TRUE)
  pdavies_single(x, params)
- qdavies(p, params,lower.tail=TRUE)
+ qdavies(p, params, lower.tail=TRUE)
  rdavies(n, params)
-ddavies.p(x,params,log=FALSE)
+ddavies.p(x, params, log=FALSE)
 }
 \arguments{
   \item{x}{quantile}
   \item{p}{vector of probabilities}
-  \item{n}{number of observations.  If \code{length(n) > 1}, the length
-    is taken to be the number required}
+  \item{n}{number of observations to take in \code{rdavies()}}
   \item{lower.tail}{logical; if \code{TRUE} (default), probabilities are
     \eqn{P(X\leq x)}{P[X <= x]}, otherwise \eqn{P(X>x)}{P[X > x]}}
   \item{log,log.p}{logical; if \code{TRUE}, probabilities are given as

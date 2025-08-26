@@ -19,11 +19,10 @@ qgld(p, params)
 rgld(n, params)
 }
 \arguments{
-  \item{x,q}{vector of quantiles}
+  \item{x, q}{vector of quantiles}
   \item{p}{vector of probabilities}
-  \item{n}{In function \code{rgld()}, the number of observations.  If \code{length(n)> 1}, the
-    length is taken to be the number required}
-\item{params}{vector of parameters: \code{params[1]==lambda1} et seq}
+  \item{n}{In function \code{rgld()}, the number of observations}
+  \item{params}{vector of parameters: \code{params[1]==lambda1} et seq}
 }
 \value{
   Function 
