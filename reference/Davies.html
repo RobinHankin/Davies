@@ -123,21 +123,21 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">params</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">10</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from<span class="op">=</span><span class="fl">4</span>,to<span class="op">=</span><span class="fl">20</span>,by<span class="op">=</span><span class="fl">0.2</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from<span class="op">=</span><span class="fl">1e-3</span>,to<span class="op">=</span><span class="fl">1</span><span class="op">-</span><span class="fl">1e-3</span>,len<span class="op">=</span><span class="fl">50</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">params</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from<span class="op">=</span><span class="fl">4</span>, to<span class="op">=</span><span class="fl">20</span>, by<span class="op">=</span><span class="fl">0.2</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from<span class="op">=</span><span class="fl">1e-3</span>, to<span class="op">=</span><span class="fl">1</span><span class="op">-</span><span class="fl">1e-3</span>, len<span class="op">=</span><span class="fl">50</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu">rdavies</span><span class="op">(</span>n<span class="op">=</span><span class="fl">5</span>,<span class="va">params</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 10.417101  8.454259  6.126923  9.866273  9.991113</span>
-<span class="r-in"><span><span class="fu"><a href="least.squares.html">least.squares</a></span><span class="op">(</span><span class="fu">rdavies</span><span class="op">(</span><span class="fl">100</span>,<span class="va">params</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 10.9106304  0.1385111  0.0497366</span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu">pdavies</span><span class="op">(</span><span class="va">x</span>,<span class="va">params</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">rdavies</span><span class="op">(</span>n<span class="op">=</span><span class="fl">5</span>, <span class="va">params</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  7.840991 11.754668 10.417101  8.454259  6.126923</span>
+<span class="r-in"><span><span class="fu"><a href="least.squares.html">least.squares</a></span><span class="op">(</span><span class="fu">rdavies</span><span class="op">(</span><span class="fl">100</span>, <span class="va">params</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 10.88009498  0.13730512  0.05055662</span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu">pdavies</span><span class="op">(</span><span class="va">x</span>, <span class="va">params</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="Davies-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">p</span>,<span class="fu">qdavies</span><span class="op">(</span><span class="va">p</span>,<span class="va">params</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">p</span>, <span class="fu">qdavies</span><span class="op">(</span><span class="va">p</span>, <span class="va">params</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="Davies-2.png" alt="" width="700" height="433"></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x</span>,<span class="fu">ddavies</span><span class="op">(</span><span class="va">x</span>,<span class="va">params</span><span class="op">)</span>,type<span class="op">=</span><span class="st">"b"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="fu">ddavies</span><span class="op">(</span><span class="va">x</span>, <span class="va">params</span><span class="op">)</span>, type<span class="op">=</span><span class="st">"b"</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="Davies-3.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
@@ -154,7 +154,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
       </footer></div>
