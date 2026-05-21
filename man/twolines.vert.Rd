@@ -23,8 +23,8 @@ twolines.vert(p, y1, y2, ...)
 \seealso{\code{\link{Davies}},\code{\link{qqplot}}}
 
 \examples{
-twolines.vert(1:100,sort(rnorm(100)),sort(rnorm(100)))
-params <- c(10 , 0.1 , 0.1)
-twolines.vert(1:100 , sort(rdavies(100,params)) , sort(rdavies(100,params)))
+twolines.vert(1:100, sort(rnorm(100)), sort(rnorm(100)))
+params <- c(10, 0.1, 0.1)
+twolines.vert(1:100, sort(rdavies(100,params)), sort(rdavies(100,params)))
 }
 \keyword{distribution}

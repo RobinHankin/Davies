@@ -12,8 +12,8 @@
 
 }
 \usage{
-fit.davies.p(x , print.fit=FALSE, use.q=TRUE , params=NULL, small=1e-5, ...)
-fit.davies.q(x , print.fit=FALSE, use.q=TRUE , params=NULL, ...)
+fit.davies.p(x, print.fit=FALSE, use.q=TRUE, params=NULL, small=1e-5, ...)
+fit.davies.q(x, print.fit=FALSE, use.q=TRUE, params=NULL, ...)
 }
 \arguments{
   \item{x}{dataset to be fitted and plotted}

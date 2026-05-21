@@ -13,6 +13,6 @@
 \examples{
 data(ozturk)
 ozturk
-hist(rgld(100,ozturk))
+hist(rgld(100, ozturk))
 }
 \keyword{datasets}

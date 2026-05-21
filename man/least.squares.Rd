@@ -46,8 +46,8 @@ maximum.likelihood(data, do.print = FALSE, start.v = NULL)
 
 \examples{
 
-  p <- c(10 , 0.1 , 0.1)
-  d <- rdavies(10,p)
+  p <- c(10, 0.1, 0.1)
+  d <- rdavies(10, p)
 
   maximum.likelihood(d)  # quite slow
   least.squares(d)       # much faster but not recommended

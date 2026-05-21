@@ -32,11 +32,11 @@ objective.approx(params, dataset)
 \examples{
 params <- c(10, 0.1, 0.1)
 x <- rdavies(100,params)
-objective(params,x)
-objective.approx(params,x)
+objective(params, x)
+objective.approx(params, x)
 
-objective(least.squares(x),x)
-objective(davies.start(x),x)
+objective(least.squares(x), x)
+objective(davies.start(x), x)
   }
 \keyword{distribution}
 

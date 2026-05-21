@@ -13,11 +13,11 @@
   distribution 
 } 
 \usage{
-davies.moment(n=1 , i=1 , order=1 , params)
-M(order,params)
+davies.moment(n=1, i=1, order=1, params)
+M(order, params)
 mu(params)
-expected.value(n,i,params)
-expected.value.approx(n,i,params)
+expected.value(n, i, params)
+expected.value.approx(n, i, params)
 variance(params)
 skewness(params)
 kurtosis(params)
@@ -61,7 +61,7 @@ mean(rdavies(1e6,params))-mu(params)
 
 #now reproduce the S-K graph:
 
-f <- function(x,y){c(skewness(c(1,x,y)),kurtosis(c(1,x,y)))}
+f <- function(x,y){c(skewness(c(1,x,y)), kurtosis(c(1,x,y)))}
 g <- function(j,vector,pp,qq=1){points(t(sapply(vector,f,y=j)),type="l",col="black",lty=qq)}
 
 vector <- c((0:300)/100 , (0:300)/10000 , seq(from=3,to=10,len=100))
